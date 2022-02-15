@@ -24,4 +24,25 @@ public class Vegetables : ScriptableObject
         TomatoGameObject;
     public GameObject GetWheat() =>
         WheatGameObject;
+
+    public float GetTimeByName(VegetablesState state) 
+    {
+        switch (state) 
+        {
+            case VegetablesState.Ñucumber: return timeCucumber;
+            case VegetablesState.Tomato: return timeTomato;
+            case VegetablesState.Wheat: return timeWheat;
+            default: return -1;
+        }
+    }
+    public GameObject GetGameObjectByName(VegetablesState state) 
+    {
+        switch (state)
+        {
+            case VegetablesState.Ñucumber: return CucumberGameObject;
+            case VegetablesState.Tomato: return TomatoGameObject;
+            case VegetablesState.Wheat: return WheatGameObject;
+            default: return null;
+        }
+    }
 }

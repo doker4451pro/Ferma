@@ -660,7 +660,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -43.300003}
+  m_AnchoredPosition: {x: 80, y: -43.299988}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531081416
@@ -1457,7 +1457,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1283273640}
   - component: {fileID: 1283273639}
-  - component: {fileID: 1283273638}
   - component: {fileID: 1283273637}
   - component: {fileID: 1283273636}
   m_Layer: 0
@@ -1495,18 +1494,6 @@ MonoBehaviour:
   tilemap: {fileID: 2021627814}
   GardenBed: {fileID: 6213321102010119181, guid: 7bf4c810fcf32fd439778b9862e905df, type: 3}
   maxGarden: 10
---- !u!114 &1283273638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283273635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 928ee08ef27670a4499de1ec94b721d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1283273639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1519,7 +1506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32ec5d89f35a68408f236a79058d504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCollector: {fileID: 1283273638}
   playerCreator: {fileID: 1283273637}
   playerSower: {fileID: 1283273636}
   state: 0

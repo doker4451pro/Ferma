@@ -15,32 +15,16 @@ public class Garden : MonoBehaviour, IPointerEnterHandler
         if (currentState == GardenState.None) 
         {
             vegetablesState = state;
-            PlantVegetable();
+            vegetable = Instantiate(vegetablesData.GetGameObjectByName(state), transform).AddComponent<BaseVegetable>();
+            currentState = GardenState.Growing;
+
+            vegetable.actionOnGwowingEnd += SetStateMatured;
+            vegetable.PlantVegetable(vegetablesData.GetTimeByName(vegetablesState));
         }
     }
 
-    private void PlantVegetable() 
-    {
-        switch (vegetablesState) 
-        {
-            case VegetablesState.Ñucumber:
-                StartCoroutine(Growing(vegetablesData.GetCucumber(), vegetablesData.GetTimeCucumber()));
-                break;
-            case VegetablesState.Tomato:
-                StartCoroutine(Growing(vegetablesData.GetTomate(), vegetablesData.GetTimeTomato()));
-                break;
-            case VegetablesState.Wheat:
-                StartCoroutine(Growing(vegetablesData.GetWheat(), vegetablesData.GetTimeWheat()));
-                break;
-        }
-    }
-    private IEnumerator Growing(GameObject gameObject,float time) 
-    {
-        vegetable= Instantiate(gameObject, transform).GetComponent<BaseVegetable>();
-        currentState = GardenState.Growing;
-        yield return new WaitForSeconds(time);
+    private void SetStateMatured() =>
         currentState = GardenState.Matured;
-    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {

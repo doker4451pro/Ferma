@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private PlayerCollector playerCollector;
     [SerializeField] private PlayerCreator playerCreator;
     [SerializeField] private PlayerSower playerSower;
 
